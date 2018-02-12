@@ -128,10 +128,6 @@ page{
     justify-content: space-around;
 }
 
-/* .box3{
-    background-color: #cc0033;
-} */
-
 .box{
     width: 100rpx;
     height: 100rpx;
@@ -147,8 +143,8 @@ page{
 .my_weui-btn_container {
   flex: 1;
   width: 100%;
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
 
 .my_weui-btn {
