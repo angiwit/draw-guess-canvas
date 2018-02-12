@@ -1,7 +1,7 @@
 Page({
   data:{
     pen : 3, //画笔粗细默认值
-    color : '#cc0033' //画笔颜色默认值
+    color : '#cc0033', //画笔颜色默认值
   },
   startX: 0, //保存X坐标轴变量
   startY: 0, //保存X坐标轴变量
@@ -11,7 +11,7 @@ Page({
       //得到触摸点的坐标
       this.startX = e.changedTouches[0].x
       this.startY = e.changedTouches[0].y
-      this.context = wx.createContext()
+      this.context = wx.createCanvasContext("myCanvas", this)
 
       if(this.isClear){ //判断是否启用的橡皮擦功能  ture表示清除  false表示画画
          this.context.setStrokeStyle('#F8F8F8') //设置线条样式 此处设置为画布的背景颜色  橡皮擦原理就是：利用擦过的地方被填充为画布的背景颜色一致 从而达到橡皮擦的效果 
@@ -28,7 +28,6 @@ Page({
          this.context.setLineWidth(this.data.pen)
          this.context.setLineCap('round') // 让线条圆润 
          this.context.beginPath()
-        
       }
   },
   //手指触摸后移动
@@ -42,7 +41,7 @@ Page({
         this.context.save();  //保存当前坐标轴的缩放、旋转、平移信息
         this.context.moveTo(this.startX,this.startY);  //把路径移动到画布中的指定点，但不创建线条
         this.context.lineTo(startX1,startY1);  //添加一个新点，然后在画布中创建从该点到最后指定点的线条
-        this.context.stroke();  //对当前路径进行描边
+        this.context.stroke();  //对当前路径进行描绘
         this.context.restore()  //恢复之前保存过的坐标轴的缩放、旋转、平移信息
           
         this.startX = startX1;
@@ -85,5 +84,9 @@ Page({
     console.log(e.currentTarget);
     this.setData({color:e.currentTarget.dataset.param});
     this.isClear = false;
+  },
+  clear: function()
+  {
+
   }
 })
