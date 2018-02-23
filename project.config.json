@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
 	"appid": "wx81220e1f0b303770",
-	"projectname": "%E4%B8%8D%E9%94%99%E7%9A%84%E7%94%BB%E5%9B%BE",
+	"projectname": "git-draw-guess-canvas",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

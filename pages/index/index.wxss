@@ -48,6 +48,10 @@ page{
   align-items: center;
 }
 
+.func_style{
+  margin-right: 50rpx;
+}
+
 .sign1{
   width: 10rpx;
   height: 10rpx;

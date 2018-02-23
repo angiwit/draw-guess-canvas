@@ -1,7 +1,7 @@
 Page({
   data:{
-    pen : 3, //画笔粗细默认值
-    color : '#cc0033', //画笔颜色默认值
+    pen : 2, //画笔粗细默认值
+    color : 'red', //画笔颜色默认值
   },
   startX: 0, //保存X坐标轴变量
   startY: 0, //保存X坐标轴变量
@@ -20,9 +20,9 @@ Page({
          this.context.setLineWidth(20) //设置线条宽度
          this.context.save();  //保存当前坐标轴的缩放、旋转、平移信息
          this.context.beginPath() //开始一个路径 
-         this.context.arc(this.startX,this.startY,5,0,2*Math.PI,true);  //添加一个弧形路径到当前路径，顺时针绘制  这里总共画了360度  也就是一个圆形 
+        //  this.context.arc(this.startX,this.startY,5,0,2*Math.PI,true);  //添加一个弧形路径到当前路径，顺时针绘制  这里总共画了360度  也就是一个圆形 
          this.context.fill();  //对当前路径进行填充
-         this.context.restore();  //恢复之前保存过的坐标轴的缩放、旋转、平移信息
+        //  this.context.restore();  //恢复之前保存过的坐标轴的缩放、旋转、平移信息
       }else{
          this.context.setStrokeStyle(this.data.color)
          this.context.setLineWidth(this.data.pen)
@@ -85,8 +85,9 @@ Page({
     this.setData({color:e.currentTarget.dataset.param});
     this.isClear = false;
   },
-  clear: function()
+  clearAll: function()
   {
-
+    this.context.clearRect(0, 0, 1500, 7500)
+    this.context.draw()
   }
 })

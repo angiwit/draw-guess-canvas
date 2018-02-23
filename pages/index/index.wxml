@@ -43,9 +43,9 @@
         功能选择
       </view>
       <view class='canvas_func_container'>
-        <view bindtap='clearCanvas'><image class='image' src='/images/橡皮擦.png'></image></view>
-        <!-- <view bindtap='save'><image class='image' src='/images/保存.png'></image></view> -->
-        <!-- <view bindtap='setBackground'><image class='image' src='/images/背景.png'></image></view> -->
+        <view bindtap='clearCanvas' class='func_style'><image class='image' src='/images/橡皮擦.png'></image></view>
+        <view bindtap='clearAll' class='func_style'><image class='image' src='/images/删除.png'></image></view> 
+         <!-- <view bindtap='clear'><image class='image' src='/images/背景.png'></image></view> -->
       </view>
     </view>
     <view class="my_weui-btn_container">
